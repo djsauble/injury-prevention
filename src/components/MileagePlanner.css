@@ -17,8 +17,3 @@
   flex-direction: column;
   align-items: center;
 }
-
-.day-planner input[type="range"] {
-  height: 100px;
-  transform: rotate(270deg);
-}

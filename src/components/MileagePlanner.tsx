@@ -34,6 +34,7 @@ const MileagePlanner: React.FC = () => {
               max={20}
               value={mileage[index]}
               onChange={(_, newValue) => handleMileageChange(index, newValue as number)}
+              sx={{ width: 50, height: 200 }}
               aria-labelledby={`vertical-slider-${index}`}
             />
             <p>{mileage[index]} miles</p>
