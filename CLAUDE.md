@@ -4,10 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-All development happens in the `frontend/` directory:
-
 ```bash
-cd frontend
 npm install        # Install dependencies
 npm run dev        # Start development server
 npm run build      # Build for production (runs TypeScript check + Vite build)
