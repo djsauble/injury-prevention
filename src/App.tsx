@@ -3,6 +3,8 @@ import MileagePlanner from './components/MileagePlanner'; // Import MileagePlann
 import MileageHistory from './components/MileageHistory'; // Import MileageHistory
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box'; // Use Box instead of Item
 import { useState } from 'react';
 
 function App() {
@@ -15,12 +17,13 @@ function App() {
   };
 
   return (
-    <>
+    <Stack direction="column" sx={{ height: '100%', alignItems: 'center' }}>
       <ToggleButtonGroup
         value={view}
         exclusive
         onChange={handleViewChange}
         aria-label="view toggle"
+        sx={{ padding: '2em 0 2em 0' }}
       >
         <ToggleButton value="planner" aria-label="mileage planner">
           Mileage Planner
@@ -29,9 +32,10 @@ function App() {
           Mileage History
         </ToggleButton>
       </ToggleButtonGroup>
-
-      {view === 'planner' ? <MileagePlanner /> : <MileageHistory />}
-    </>
+      <Box sx={{ width: '100%', overflowY: 'auto' }}>
+        {view === 'planner' ? <MileagePlanner /> : <MileageHistory />}
+      </Box>
+    </Stack>
   )
 }
 
