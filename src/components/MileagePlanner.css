@@ -5,28 +5,35 @@
 
 .days-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; /* Keep space-around for distribution */
   margin-top: 20px;
+  padding: 0 10px; /* Add some horizontal padding to the container */
+  gap: 40px; /* Add gap between flex items */
 }
 
 .day-planner {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* Removed horizontal margin, using gap on container instead */
+}
+
+.day-planner h2 {
+  margin-bottom: 5px; /* Keep reduced gap between day name and slider */
 }
 
 .day-planner input[type="range"] {
   -webkit-appearance: none;
   appearance: none; /* Added for compatibility */
   width: 50px; /* Adjust width to control vertical height */
-  height: 200px; /* Adjust height to control vertical height */
+  height: 300px; /* Increased height */
   background: #d3d3d3;
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
   transition: opacity .2s;
   transform: rotate(270deg); /* Rotate to make it vertical */
-  margin: 20px 0;
+  margin: 10px 0; /* Keep reduced vertical margin around slider */
 }
 
 .day-planner input[type="range"]::-webkit-slider-thumb {
@@ -43,4 +50,8 @@
   height: 25px;
   background: #04AA6D;
   cursor: pointer;
+}
+
+.day-planner p {
+  margin-top: 5px; /* Keep reduced gap between slider and mileage */
 }

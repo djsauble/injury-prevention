@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './MileagePlanner.css'; // Import the CSS file
 
 const MileagePlanner: React.FC = () => {
-  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S']; // Changed to shorthand day names
   const [mileage, setMileage] = useState<number[]>(() => {
     const savedMileage = localStorage.getItem('mileage');
     return savedMileage ? JSON.parse(savedMileage) : new Array(7).fill(0);
