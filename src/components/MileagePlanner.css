@@ -19,7 +19,6 @@
 }
 
 .day-planner input[type="range"] {
-  height: 80px;
-  width: 80px;
+  height: 100px;
   transform: rotate(270deg);
 }
