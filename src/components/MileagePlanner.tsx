@@ -22,7 +22,7 @@ const MileagePlanner: React.FC = () => {
 
   return (
     <div className="mileage-planner">
-      <h1>Weekly Mileage: {totalMileage} miles</h1>
+      <h1>{totalMileage} miles this week</h1>
       <div className="days-container">
         {days.map((day, index) => (
           <div key={day} className="day-planner">
