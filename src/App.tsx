@@ -1,9 +1,10 @@
 import './App.css'
+import MileagePlanner from './components/MileagePlanner'; // Import MileagePlanner
 
 function App() {
   return (
     <>
-      {/* App goes here */}
+      <MileagePlanner /> {/* Add MileagePlanner component */}
     </>
   )
 }

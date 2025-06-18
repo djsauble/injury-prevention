@@ -1,0 +1,19 @@
+.mileage-planner {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.days-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 0 10px;
+  gap: 20px;
+}
+
+.day-planner {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
