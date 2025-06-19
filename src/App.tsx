@@ -1,4 +1,3 @@
-import './App.css'
 import MileagePlanner from './components/MileagePlanner'; // Import MileagePlanner
 import MileageHistory from './components/MileageHistory'; // Import MileageHistory
 import ToggleButton from '@mui/material/ToggleButton';

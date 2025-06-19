@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './MileagePlanner.css'; // Import the CSS file
-import Slider from '@mui/material/Slider'; // Import Material UI Slider
+import { Slider, Stack } from '@mui/material';
 
 const MileagePlanner: React.FC = () => {
   const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S']; // Changed to shorthand day names
@@ -22,11 +21,11 @@ const MileagePlanner: React.FC = () => {
   const totalMileage = mileage.reduce((sum, dayMileage) => sum + dayMileage, 0);
 
   return (
-    <div className="mileage-planner">
+    <Stack alignItems="center">
       <h1>{totalMileage} miles this week</h1>
-      <div className="days-container">
+      <Stack direction="row">
         {days.map((day, index) => (
-          <div key={day} className="day-planner">
+          <Stack key={day} alignItems="center">
             <h2>{day}</h2>
             <Slider
               orientation="vertical"
@@ -38,10 +37,10 @@ const MileagePlanner: React.FC = () => {
               aria-labelledby={`vertical-slider-${index}`}
             />
             <p>{mileage[index]} miles</p>
-          </div>
+          </Stack>
         ))}
-      </div>
-    </div>
+      </Stack>
+    </Stack>
   );
 };
 
