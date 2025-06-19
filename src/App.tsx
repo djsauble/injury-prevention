@@ -1,9 +1,9 @@
-import MileagePlanner from './components/MileagePlanner'; // Import MileagePlanner
-import MileageHistory from './components/MileageHistory'; // Import MileageHistory
+import MileagePlanner from './components/MileagePlanner';
+import MileageHistory from './components/MileageHistory';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box'; // Use Box instead of Item
+import Box from '@mui/material/Box';
 import { useState } from 'react';
 
 function App() {

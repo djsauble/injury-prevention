@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Slider, Stack } from '@mui/material';
 
 const MileagePlanner: React.FC = () => {
-  const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S']; // Changed to shorthand day names
+  const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
   const [mileage, setMileage] = useState<number[]>(() => {
     const savedMileage = localStorage.getItem('mileage');
     return savedMileage ? JSON.parse(savedMileage) : new Array(7).fill(0);
