@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './MileagePlanner.css'; // Import the CSS file
-import Slider from '@mui/material/Slider'; // Import Material UI Slider
+import { Slider, Stack, Typography, Button } from '@mui/material';
 
-const MileagePlanner: React.FC = () => {
-  const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S']; // Changed to shorthand day names
+interface MileagePlannerProps {
+  onAddWeek: (total: number) => void;
+}
+
+const MileagePlanner: React.FC<MileagePlannerProps> = ({ onAddWeek }) => {
+  const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
   const [mileage, setMileage] = useState<number[]>(() => {
     const savedMileage = localStorage.getItem('mileage');
     return savedMileage ? JSON.parse(savedMileage) : new Array(7).fill(0);
@@ -21,13 +24,18 @@ const MileagePlanner: React.FC = () => {
 
   const totalMileage = mileage.reduce((sum, dayMileage) => sum + dayMileage, 0);
 
+  const handleAddWeek = () => {
+    onAddWeek(totalMileage);
+    setMileage(new Array(7).fill(0));
+  };
+
   return (
-    <div className="mileage-planner">
-      <h1>{totalMileage} miles this week</h1>
-      <div className="days-container">
+    <Stack alignItems="center">
+      <Typography variant="h4" gutterBottom>{totalMileage} miles this week</Typography>
+      <Stack direction="row">
         {days.map((day, index) => (
-          <div key={day} className="day-planner">
-            <h2>{day}</h2>
+          <Stack key={day} alignItems="center">
+            <Typography variant="h6">{day}</Typography>
             <Slider
               orientation="vertical"
               min={0}
@@ -37,11 +45,14 @@ const MileagePlanner: React.FC = () => {
               sx={{ width: 50, height: 200 }}
               aria-labelledby={`vertical-slider-${index}`}
             />
-            <p>{mileage[index]} miles</p>
-          </div>
+            <Typography>{mileage[index]} miles</Typography>
+          </Stack>
         ))}
-      </div>
-    </div>
+      </Stack>
+      <Button variant="contained" onClick={handleAddWeek} sx={{ mt: 2 }}>
+        Submit Week
+      </Button>
+    </Stack>
   );
 };
 
